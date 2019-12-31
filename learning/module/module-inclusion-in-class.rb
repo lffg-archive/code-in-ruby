@@ -1,16 +1,30 @@
 module FirstModule
   def first_method
-    "First Method"
+    1
   end
 
   def self.included(klass)
-    p klass.instance_methods.include?(:first_method) # => true
+    puts "FirstModule was included in #{klass}."
+  end
+end
+
+module SecondModule
+  include FirstModule
+
+  def second_method
+    2
+  end
+
+  def self.included(klass)
+    puts "SecondModule was included in #{klass}."
   end
 end
 
 class MyClass
-  include FirstModule
+  include SecondModule
 end
 
-ins = MyClass.new
-p ins.first_method
+# Output log:
+#
+#   FirstModule was included in SecondModule.
+#   SecondModule was included in MyClass.
