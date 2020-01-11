@@ -1,6 +1,6 @@
 # if, unless, while, until, for, break, next, redo
 
-for value in (0..3).to_a do
+(0..3).to_a.each do |_value|
   if arg == 1
     "Arg is one"
   elsif arg == 2

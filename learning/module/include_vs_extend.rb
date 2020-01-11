@@ -3,8 +3,8 @@ def try
 
   begin
     yield
-  rescue => exception
-    "ERR: #{exception.message}"
+  rescue StandardError => e
+    "ERR: #{e.message}"
   end
 end
 
@@ -22,8 +22,8 @@ class SecondClass
   extend MyModule
 end
 
-puts try { FirstClass.new.a }
-puts try { FirstClass.a }
+puts(try { FirstClass.new.a })
+puts(try { FirstClass.a })
 
-puts try { SecondClass.new.a }
-puts try { SecondClass.a }
+puts(try { SecondClass.new.a })
+puts(try { SecondClass.a })

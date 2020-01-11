@@ -1,7 +1,7 @@
 my_mod = Module.new do
   def custom_lower
     puts "Current: #{self}."
-    self.downcase
+    downcase
   end
 end
 
