@@ -13,7 +13,7 @@ AllCops:
 # Custom for this repository
 
 Naming/MethodParameterName:
-  EnableD: false
+  Enabled: false
 
 # Metrics:
 
